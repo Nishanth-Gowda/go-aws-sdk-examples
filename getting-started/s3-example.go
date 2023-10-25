@@ -18,6 +18,13 @@ func main() {
 
 	region := "ap-south-1"
 
+	// LoadDefaultConfig is used to create an AWS SDK configuration based on best practices
+	// for production-level applications. It loads configuration options such as AWS region,
+	// credentials, and other settings from various sources, including environment variables,
+	// shared configuration files, and IAM roles.
+
+	// Returns:
+	// - An AWS SDK configuration object (`config.Config`), ready to be used with AWS services.
 	config, err := config.LoadDefaultConfig(context.TODO(), config.WithRegion(region))
 	if err != nil {
 		fmt.Println("Couldn't load default configuration. Have you set up your AWS account?")
@@ -26,7 +33,7 @@ func main() {
 	}
 	client := s3.NewFromConfig(config)
 
-	fmt.Println("Please enter the desired S3 Operation ")
+	fmt.Println("Please enter the desired S3 Operation 🚀")
 	fmt.Printf("\n 1. List Buckets \n 2. Create Bucket \n 3. Delete Bucket\n")
 	
 
